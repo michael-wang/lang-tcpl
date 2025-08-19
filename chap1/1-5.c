@@ -1,11 +1,13 @@
-// #define copy
+#define copy
 // #define exe_1_6
 // #define exe_1_7
 // #define count_char
 // #define count_line
 // #define exe_1_8
 // #define exe_1_9
-#define exe_1_10
+// #define exe_1_10
+// #define counter
+// #define exe_1_12
 
 
 #include <stdio.h>
@@ -138,6 +140,58 @@ int main() {
 			putchar('\\');
 			putchar('\\');
 		} else {
+			putchar(c);
+		}
+	}
+	return 0;
+}
+
+#elifdef counter
+
+#define IN	1
+#define OUT	0
+
+int main() {
+	int c, nl, nw, nc, state;
+
+	state = OUT;
+	nl = nw = nc = 0;
+	while ((c = getchar()) != EOF) {
+		++nc;
+		if (c == '\n') {
+			++nl;
+		}
+		if (c == ' ' || c == '\n' || c == '\t') {
+			state = OUT;
+		} else if (state == OUT) {
+			state = IN;
+			++nw;
+		}
+	}
+	printf("#Lines: %d\n#Words: %d\n#Char: %d\n", nl, nw, nc);
+	return 0;
+}
+
+#elifdef exe_1_12
+
+#define IN	1
+#define OUT	0
+
+int main() {
+	int c, state;
+
+	state = OUT;
+	while ((c = getchar()) != EOF) {
+		if (c == ' ' || c == '\n' || c == '\t') {
+			if (state == IN) {
+				putchar('\n');
+			}
+			state = OUT;
+		} else if (state == OUT) {
+			state = IN;
+		}
+
+		if (state == IN) {
 			putchar(c);
 		}
 	}
