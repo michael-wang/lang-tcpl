@@ -1,11 +1,32 @@
 #include <stdio.h>
 
+#define temperature
 // #define exe_1_3
 // #define exe_1_4
 
 
 
-#ifdef exe_1_3
+#ifdef temperature
+
+int main() {
+	float fahr, celsius;
+	int lower, upper, step;
+
+	lower = 0;
+	upper = 300;
+	step = 20;
+
+	fahr = lower;
+	while (fahr <= upper) {
+		celsius = (5.0 / 9.0) * (fahr - 32.0);
+		printf("%3.0f %6.1f\n", fahr, celsius);
+		fahr += step;
+	}
+	return 0;
+}
+
+#elifdef exe_1_3
+
 int main() {
 	float fahr, celsius;
 	int lower, upper, step;
@@ -44,22 +65,4 @@ int main() {
 	return 0;
 }
 
-#else
-
-int main() {
-	float fahr, celsius;
-	int lower, upper, step;
-
-	lower = 0;
-	upper = 300;
-	step = 20;
-
-	fahr = lower;
-	while (fahr <= upper) {
-		celsius = (5.0 / 9.0) * (fahr - 32.0);
-		printf("%3.0f %6.1f\n", fahr, celsius);
-		fahr += step;
-	}
-	return 0;
-}
 #endif
