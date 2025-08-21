@@ -1,8 +1,0 @@
-1space .
-2space  .
-3space   .
-4space	.
-5spaces	 .
-6spaces	  .
-7spaces	   .
-8spaces		.

@@ -1,8 +1,3 @@
-#define LONGEST_LINE
-
-
-#ifdef LONGEST_LINE
-
 #include <stdio.h>
 
 #define MAXLINE	1000
@@ -59,5 +54,3 @@ void copy(void) {
 		++i;
 	}
 }
-
-#endif
