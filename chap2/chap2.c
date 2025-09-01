@@ -40,11 +40,20 @@ void test_squeeze() {
 	printf("%s\n", s);
 }
 
+void test_concat() {
+	char s[] = "Hello, ";
+	char t[] = " world!";
+	printf("str_cat(\"%s\", \"%s\") = ", s, t);
+	str_cat(s, t);
+	printf("\"%s\"\n", s);
+}
+
 int main() {
 	test_atoi();
 	test_lower();
 	test_random();
 	test_squeeze();
+	test_concat();
 
 	return 0;
 }
